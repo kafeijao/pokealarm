@@ -1053,6 +1053,18 @@ def get_time_as_str(t, timezone=None):
         disappear_time = datetime.now(tz=timezone) + d
     else:
         disappear_time = datetime.now() + d
+
+    unix_timestamp = int(disappear_time.timestamp())
+
+    # Discord Timestamps
+    time_discord_short_time = f"<t:{unix_timestamp}:t>"
+    time_discord_long_time = f"<t:{unix_timestamp}:T>"
+    time_discord_short_date = f"<t:{unix_timestamp}:d>"
+    time_discord_long_date = f"<t:{unix_timestamp}:D>"
+    time_discord_short_date_time = f"<t:{unix_timestamp}:f>"
+    time_discord_long_date_time = f"<t:{unix_timestamp}:F>"
+    time_discord_relative_time = f"<t:{unix_timestamp}:R>"
+
     # Time remaining in minutes and seconds
     time = f"{m:.0f}m {s:.0f}s" if h == 0 else f"{h:.0f}h {m:.0f}m"
     # Disappear time in 12h format, eg "2:30:16 PM"
@@ -1083,6 +1095,14 @@ def get_time_as_str(t, timezone=None):
         time_raw_hours,
         time_raw_minutes,
         time_raw_seconds,
+        # Discord specific
+        time_discord_short_time,
+        time_discord_long_time,
+        time_discord_short_date,
+        time_discord_long_date,
+        time_discord_short_date_time,
+        time_discord_long_date_time,
+        time_discord_relative_time,
     )
 
 

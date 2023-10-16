@@ -309,6 +309,14 @@ class MonEvent(BaseEvent):
                 "time_left_raw_seconds": time[8],
                 "disappear_time_utc": self.disappear_time,
                 "current_timestamp_utc": datetime.utcnow(),
+                # Time Remaining - Discord Specific
+                "time_left_discord_short_time": time[9],
+                "time_left_discord_long_time": time[10],
+                "time_left_discord_short_date": time[11],
+                "time_left_discord_long_date": time[12],
+                "time_left_discord_short_date_time": time[13],
+                "time_left_discord_long_date_time": time[14],
+                "time_left_discord_relative_time": time[15],
                 # Spawn Data
                 "spawn_start": self.spawn_start,
                 "spawn_end": self.spawn_end,
